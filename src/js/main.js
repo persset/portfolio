@@ -30,16 +30,16 @@ function scrollActive() {
 
   sections.forEach((current) => {
     const sectionHeight = current.offsetHeight;
-    const sectionTop = curent.offsetTop;
+    const sectionTop = current.offsetTop;
     sectionId = current.getAttribute("id");
 
-    if (scrooY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
       document
-        .querySelectorAll(".nav_menu a[href*=" + sectionId + "]")
+        .querySelector(".nav_menu a[href*=" + sectionId + "]")
         .classList.add("active");
     } else {
       document
-        .querySelector('.nav_menu a[href*=" + sectionId + "]')
+        .querySelector(".nav_menu a[href*=" + sectionId + "]")
         .classList.remove("active");
     }
   });
